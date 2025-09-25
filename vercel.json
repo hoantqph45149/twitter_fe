@@ -1,8 +1,9 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+      "source": "/api/(.*)",
+      "destination": "https://your-app.onrender.com/api/:splat"
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
