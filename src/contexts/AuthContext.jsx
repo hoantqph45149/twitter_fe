@@ -13,7 +13,10 @@ export function AuthProvider({ children }) {
     queryKey: ["authUser"],
     queryFn: async () => {
       const res = await fetch(
-        "https://twitter-api-jiiv.onrender.com/api/auth/me"
+        "https://twitter-api-jiiv.onrender.com/api/auth/me",
+        {
+          credentials: "include",
+        }
       );
       if (!res.ok) {
         if (res.status === 401) throw new Error("Unauthorized");
