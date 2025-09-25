@@ -1,19 +1,17 @@
-import { HiX } from "react-icons/hi";
-import { FiSearch } from "react-icons/fi";
 import {
   useInfiniteQuery,
   useMutation,
-  useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import useDebounce from "../../hooks/useDebounce";
-import LoadingSpinner from "./LoadingSpinner";
+import { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import AvatarChat from "./AvatarChat";
-import { fetchWithAuth } from "../../services/fetchInstance";
+import { FiSearch } from "react-icons/fi";
+import { HiX } from "react-icons/hi";
 import { useAuthContext } from "../../contexts/AuthContext";
+import useDebounce from "../../hooks/useDebounce";
+import AvatarChat from "./AvatarChat";
+import LoadingSpinner from "./LoadingSpinner";
 
 const fetchUsers = async ({ pageParam = 1, queryKey }) => {
   const [, query] = queryKey;
